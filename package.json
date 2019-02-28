@@ -1,0 +1,26 @@
+{
+  "name": "poirot",
+  "version": "1.0.0",
+  "description": "Asynchronously find usernames across social networks",
+  "main": "poirot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajdeepbharati/poirot.git"
+  },
+  "keywords": [
+    "async",
+    "node.js"
+  ],
+  "author": "Rajdeep Bharati",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/rajdeepbharati/poirot/issues"
+  },
+  "homepage": "https://github.com/rajdeepbharati/poirot#readme",
+  "dependencies": {
+    "yargs": "^13.2.1"
+  }
+}
