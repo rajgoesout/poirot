@@ -1,0 +1,15 @@
+{
+  "GitHub": {
+    "url": "https://github.com/{}",
+    "errorType": "status_code"
+  },
+  "GitLab": {
+    "url": "https://gitlab.com/{}",
+    "errorType": "message",
+    "errorMsg": "You need to sign in or sign up before continuing."
+  },
+  "Medium": {
+    "url": "https://medium.com/@{}",
+    "errorType": "status_code"
+  }
+}
