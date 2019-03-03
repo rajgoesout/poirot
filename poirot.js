@@ -1,24 +1,69 @@
 const fs = require('fs');
 const https = require('https');
 const yargs = require('yargs');
+const chalk = require('chalk');
 
 const suspects = JSON.parse(fs.readFileSync('./data.json', 'utf-8'));
 
 const argv = yargs.argv;
 const username = process.argv[2];
 
-console.log(`Checking username ${username} on:`);
+const BANNER = String.raw`
+|"""\      .          _|_    ~\_          .          _/~
+|___/ |""| | |=\ |""|  |      ^\-:_:-:_:-:_:-:_:-:_:-/^
+|     |__| | |   |__|  |_/       <.)*~$^     ^$~*).>
+`;
+
+console.log(chalk.bold(chalk.greenBright(BANNER)));
+
+console.log(
+  chalk.bold(
+    chalk.greenBright(
+      `${chalk.cyanBright('[#]')} Checking username ${chalk.whiteBright(
+        username
+      )} on:`
+    )
+  )
+);
 
 function retrieve(url, suspect, suspects) {
+  const plus = '+';
+  const minus = '-';
   https
     .get(url, res => {
-      //   console.log(url, res.statusCode);
-      if (res.statusCode === 200) console.log(url, 'Yup', res.statusCode);
-      else console.log(url, 'Nope', res.statusCode);
+      if (res.statusCode === 200) {
+        console.log(
+          chalk.bold(
+            chalk.whiteBright('[') +
+              chalk.greenBright(plus) +
+              chalk.whiteBright('] ') +
+              chalk.greenBright(suspect + ':'),
+            chalk.whiteBright(url)
+          )
+        );
+      } else {
+        console.log(
+          chalk.bold(
+            chalk.whiteBright('[') +
+              chalk.red(minus) +
+              chalk.whiteBright('] ') +
+              chalk.greenBright(suspect + ':') +
+              chalk.yellowBright(' Not Found!')
+          )
+        );
+      }
     })
     .on('error', e => {
       //   console.error(e);
-      console.log(url, "Couldn't connect");
+      console.log(
+        chalk.bold(
+          chalk.whiteBright('[') +
+            chalk.redBright(minus) +
+            chalk.whiteBright('] ') +
+            chalk.greenBright(suspect + ': ') +
+            chalk.yellowBright(" Couldn't connect")
+        )
+      );
     });
 }
 

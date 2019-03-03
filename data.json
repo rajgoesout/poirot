@@ -11,5 +11,18 @@
   "Medium": {
     "url": "https://medium.com/@{}",
     "errorType": "status_code"
+  },
+  "Patreon": {
+    "url": "https://www.patreon.com/{}",
+    "errorType": "status_code"
+  },
+  "Spotify": {
+    "url": "https://open.spotify.com/user/{}",
+    "errorType": "status_code"
+  },
+  "Twitter": {
+    "url": "https://twitter.com/{}",
+    "errorType": "message",
+    "errorMsg": "page doesn\u2019t exist"
   }
 }
