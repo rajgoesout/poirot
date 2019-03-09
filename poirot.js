@@ -41,6 +41,7 @@ function retrieve(url, suspect, suspects) {
             chalk.whiteBright(url)
           )
         );
+        fs.appendFileSync(username + '.txt', url + '\n');
       } else {
         console.log(
           chalk.bold(
@@ -66,6 +67,8 @@ function retrieve(url, suspect, suspects) {
       );
     });
 }
+
+fs.writeFileSync(username + '.txt', '');
 
 for (suspect in suspects) {
   retrieve(suspects[suspect]['url'].replace('{}', username), suspect, suspects);
