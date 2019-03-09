@@ -1,24 +1,51 @@
 {
+  "Codecademy": {
+    "errorType": "status_code",
+    "url": "https://www.codecademy.com/{}"
+  },
+  "Codepen": {
+    "errorType": "status_code",
+    "url": "https://codepen.io/{}"
+  },
   "GitHub": {
-    "url": "https://github.com/{}",
-    "errorType": "status_code"
+    "errorType": "status_code",
+    "url": "https://github.com/{}"
   },
   "GitLab": {
     "url": "https://gitlab.com/{}",
     "errorType": "message",
     "errorMsg": "You need to sign in or sign up before continuing."
   },
+  "Kaggle": {
+    "errorType": "status_code",
+    "url": "https://www.kaggle.com/{}"
+  },
   "Medium": {
-    "url": "https://medium.com/@{}",
-    "errorType": "status_code"
+    "errorType": "status_code",
+    "url": "https://medium.com/@{}"
   },
   "Patreon": {
-    "url": "https://www.patreon.com/{}",
-    "errorType": "status_code"
+    "errorType": "status_code",
+    "url": "https://www.patreon.com/{}"
+  },
+  "Pinterest": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.pinterest.com/?show_error=true",
+    "url": "https://www.pinterest.com/{}/"
+  },
+  "ProductHunt": {
+    "errorMsg": "Product Hunt is a curation of the best new products",
+    "errorType": "message",
+    "url": "https://www.producthunt.com/@{}"
+  },
+  "Reddit": {
+    "errorMsg": "page not found",
+    "errorType": "message",
+    "url": "https://www.reddit.com/user/{}"
   },
   "Spotify": {
-    "url": "https://open.spotify.com/user/{}",
-    "errorType": "status_code"
+    "errorType": "status_code",
+    "url": "https://open.spotify.com/user/{}"
   },
   "Twitter": {
     "url": "https://twitter.com/{}",
