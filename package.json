@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Asynchronously find usernames across social networks",
   "main": "poirot.js",
+  "preferGlobal": true,
+  "bin": "poirot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
