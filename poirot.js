@@ -68,8 +68,6 @@ function retrieve(url, suspect, suspects) {
     });
 }
 
-fs.writeFileSync(username + '.txt', '');
-
 for (suspect in suspects) {
   retrieve(suspects[suspect]['url'].replace('{}', username), suspect, suspects);
 }
