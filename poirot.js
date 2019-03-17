@@ -26,7 +26,7 @@ console.log(
   )
 );
 
-function retrieve(url, suspect, suspects) {
+function retrieve(url, suspect) {
   const plus = '+';
   const minus = '-';
   https
@@ -41,7 +41,9 @@ function retrieve(url, suspect, suspects) {
             chalk.whiteBright(url)
           )
         );
-        fs.appendFileSync(username + '.txt', url + '\n');
+        if (argv.s || argv.save) {
+          fs.appendFileSync(username + '.txt', url + '\n');
+        }
       } else {
         console.log(
           chalk.bold(
@@ -55,7 +57,6 @@ function retrieve(url, suspect, suspects) {
       }
     })
     .on('error', e => {
-      //   console.error(e);
       console.log(
         chalk.bold(
           chalk.whiteBright('[') +
@@ -68,6 +69,10 @@ function retrieve(url, suspect, suspects) {
     });
 }
 
-for (suspect in suspects) {
-  retrieve(suspects[suspect]['url'].replace('{}', username), suspect, suspects);
+function analyze(suspects) {
+  for (suspect in suspects) {
+    retrieve(suspects[suspect]['url'].replace('{}', username), suspect);
+  }
 }
+
+analyze(suspects);
