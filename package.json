@@ -1,5 +1,5 @@
 {
-  "name": "poirot",
+  "name": "poirotjs",
   "version": "1.0.0",
   "description": "Asynchronously find usernames across social networks",
   "main": "poirot.js",
