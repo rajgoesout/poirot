@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const https = require('https');
 const yargs = require('yargs');
 const chalk = require('chalk');
 
-const suspects = JSON.parse(fs.readFileSync('./data.json', 'utf-8'));
+const suspects = JSON.parse(fs.readFileSync(`${__dirname}/data.json`, 'utf-8'));
 
 const argv = yargs.argv;
 const username = process.argv[2];
